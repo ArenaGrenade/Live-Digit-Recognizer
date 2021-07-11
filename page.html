@@ -1,0 +1,66 @@
+<!doctype html>
+<html style="height: 100vh !important">
+    <head>
+        <title>MNIST Live Demo</title>
+
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+        <script src="https://kit.fontawesome.com/39aae1b1b0.js" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@2.0.0/dist/tf.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+        <style>
+            a.deco-none {
+                color:#212529 !important;
+                text-decoration: none;
+            }
+        </style>
+    </head>
+    <body style="height: 100vh !important">
+        <div class="container h-100 d-flex flex-column justify-content-around">
+            <div class="row d-flex flex-column justify-content-center align-items-center text-center">
+                <h1 class="display-3">Live Digit Recognizer</h1>
+                <div>
+                    Built with <i class="fas fa-heart text-danger"></i> by <a href="https://github.com/ArenaGrenade" class="deco-none">Rohan Asokan</a>
+                </div>
+                <div class="logos">
+                    <a href="https://colab.research.google.com/drive/1mm7wd65ltU89gwlGIqTCNFsu6052CkSw?usp=sharing"><img alt="Colab URL" src="https://img.shields.io/badge/Colab-Peek%20Code-blue?style=flat&logo=googlecolab"></a>
+                    <a href="https://github.com/ArenaGrenade" class="deco-none"><img alt="Project Github" src="https://img.shields.io/badge/Github-Learn%20more-blue?style=flat&logo=github"></a>
+                    <a href="https://www.linkedin.com/in/rohan-asokan/" class="deco-none"><img alt="Linkedin Profile Link" src="https://img.shields.io/badge/Linkedin-Connect-blue?style=flat&logo=linkedin"></a>
+                    <a href="https://twitter.com/agentAsskon" class="deco-none"><img alt="Linkedin Profile Link" src="https://img.shields.io/badge/Twitter-Follow-blue?style=flat&logo=twitter"></a>
+                </div>
+                <div class="w-75"><small>Just draw any digit into the box on the left and the numbers on the right would automatically adjust to reflect the number you drew. It works using a <span style="font-weight: bold">99.4% accurate</span> Machine Learning Model built using Tensorflow and trained over the MNIST dataset.</small></div>
+                <div class="text-danger" style="font-size: 9px">There might be a tiny delay/lag the first time the model predicts. This is normal and happens just once. I speedran the project in under 4hrs, if there are any bugs do report them.</div>
+            </div>
+            <div class="row canvas-container container">
+                <div class="row d-flex justify-content-center">
+                    <div class="col" style="text-align: center">
+                        <canvas id="myCanvas" width="280" height="280" style="border:1px solid #000000; width: 280px !important; display:inline" />
+                    </div>
+                    <div class="col-8">
+                        <div class="container h-100">
+                            <div class="row h-50 align-items-center">
+                                <div class="col text-center" id="number0">0</div>
+                                <div class="col text-center" id="number1">1</div>
+                                <div class="col text-center" id="number2">2</div>
+                                <div class="col text-center" id="number3">3</div>
+                                <div class="col text-center" id="number4">4</div>
+                            </div>
+                            <div class="row h-50 align-items-center">
+                                <div class="col text-center" id="number5">5</div>
+                                <div class="col text-center" id="number6">6</div>
+                                <div class="col text-center" id="number7">7</div>
+                                <div class="col text-center" id="number8">8</div>
+                                <div class="col text-center" id="number9">9</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row status-container text-center">
+                <button id="status" class="btn btn-primary" type="button" style="pointer-events: none;color: white; background-color: #1d88c6; border-color: #1d88c6; opacity: 1" disabled></button>
+            </div>
+        </div>
+    </body>
+    <script src="index.js"></script>
+</html>
